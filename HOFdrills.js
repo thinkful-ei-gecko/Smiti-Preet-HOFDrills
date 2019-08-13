@@ -73,11 +73,15 @@ rocksWarning('Dallas');
 //part 4 - turtle movement 
 
 let arr = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+
+
 function turtleMovement(arr){
-    
-    const filteredSteps = arr.filter(negativeOut);
+
+
+    const filteredSteps = arr.filter(negativeSteps);
     const additionalSteps = arr.map(addSteps);
-    const totalSteps = arr.forEach((additionalSteps, index) => console.log(`Movement number ${index}: ${additionalSteps} step.`));
+    const totalSteps = additionalSteps.forEach(countSteps);
     //const filteredMovement = arr.filter(movement => movement[0]>0 && movement[1]>0)
 }
 
@@ -87,15 +91,19 @@ function negativeSteps(arr){
     }
     else {
         return false;
-    }      
+    }
 }
 function addSteps(arr){
-    return (arr[0] += arr[1]);
+    return arr[0] += arr[1];
 }
 
-function countSteps(arr){
-    console.log(`Movement #${index}`);
+function countSteps(addSteps){
+  let index = 1;
+  console.log(`Movement #${index++}: ${addSteps} step`);
 }
+
+turtleMovement([0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]);
+
 
 
 //Part 5 - reduce
