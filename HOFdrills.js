@@ -79,30 +79,29 @@ let arr = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 function turtleMovement(arr){
 
 
-    const filteredSteps = arr.filter(negativeSteps);
-    const additionalSteps = arr.map(addSteps);
+    const filteredSteps = arr.filter(movement => movement[0]>=0 && movement[1]>=0);
+    const additionalSteps = filteredSteps.map(addSteps);
     const totalSteps = additionalSteps.forEach(countSteps);
     //const filteredMovement = arr.filter(movement => movement[0]>0 && movement[1]>0)
 }
 
-function negativeSteps(arr){
-    if (arr[0] > 0 && arr[1] > 0){
+/*function negativeSteps(arr){
+    if (arr[0] >= 0 && arr[1] >= 0){ //needed to add in the = to satisfy the condition
         return true;
     }
     else {
         return false;
     }
-}
+}*/
 function addSteps(arr){
     return arr[0] += arr[1];
 }
 
-function countSteps(addSteps){
-  let index = 1;
+function countSteps(addSteps, index){
   console.log(`Movement #${index++}: ${addSteps} step`);
 }
 
-turtleMovement([0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]);
+turtleMovement(arr);
 
 
 
