@@ -98,3 +98,29 @@ function countSteps(arr){
 }
 
 
+//Part 5 - reduce
+
+let string = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+function decode(sentence){
+    let words = sentence.split(' ');
+    //split string into array
+    let decodedWords = words.reduce(decodeWords, ' ');
+    //empty string 
+    return decodedWords;
+
+    function decodeWords(sentence, word){
+        if (word.length === 3){
+            sentence += ' ';
+            //element is 3 characters, add space 
+        }
+        else {
+            sentence += word.substr(word.length - 1).toUpperCase();
+        }
+        return sentence;
+        //else capitalize last character
+    }
+}
+console.log(decode(string));
+//NO NEED TO SHOUT 
+
+//END
