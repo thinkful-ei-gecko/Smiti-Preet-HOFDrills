@@ -1,5 +1,5 @@
 'strict mode'
-//part 1
+/*//part 1
 function repeat (fn, n){
     for (let i = 0; i < n; i++)
     fn();
@@ -69,4 +69,32 @@ const hurricaneWarning = hazardWarningCreator('Heavy rains and wind');
 rocksWarning('Houston');
 rocksWarning('Dallas');
 
-//end of 3
+//end of 3 */
+//part 4 - turtle movement 
+
+let arr = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+function turtleMovement(arr){
+    
+    const filteredSteps = arr.filter(negativeOut);
+    const additionalSteps = arr.map(addSteps);
+    const totalSteps = arr.forEach((additionalSteps, index) => console.log(`Movement number ${index}: ${additionalSteps} step.`));
+    //const filteredMovement = arr.filter(movement => movement[0]>0 && movement[1]>0)
+}
+
+function negativeSteps(arr){
+    if (arr[0] > 0 && arr[1] > 0){
+        return true;
+    }
+    else {
+        return false;
+    }      
+}
+function addSteps(arr){
+    return (arr[0] += arr[1]);
+}
+
+function countSteps(arr){
+    console.log(`Movement #${index}`);
+}
+
+
